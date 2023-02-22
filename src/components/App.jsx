@@ -1,4 +1,5 @@
 import React from "react";
+import { nanoid } from 'nanoid';
 
 import css from 'components/App.module.css'
 
@@ -11,13 +12,23 @@ class App extends React.Component {
   }
 
   formSubmitHandler = data =>{
-    setTimeout(() => {
-      console.log('я в Апп');
-    }, 2000);
-    
-  }
+  
+  const cont = {
+    name: data.name,
+    tel: data.number
+  };
+
+  const arr = this.state.contacts;
+  arr.push(cont);
+  
+  this.setState(prevState => ({
+    contacts: arr,
+  }));
+  };
   
   render() {
+    
+    const newArr = this.state.contacts;
     return (
     <div className={css.phoneBook}>
       <div>
@@ -35,7 +46,11 @@ class App extends React.Component {
       />
       </label>
       <ul>
-        <li>Vasya Pypkin</li>
+      {newArr.map(item=>{
+      const id = nanoid(4)
+      return (<li key={id}>{item.name}: {item.tel}</li>)
+          }
+        )}
       </ul>
       </div>
     </div>
