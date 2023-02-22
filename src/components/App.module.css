@@ -1,0 +1,26 @@
+p,h1 {
+    margin: 0;
+    padding: 0;
+    /* list-style: none; */
+}
+button{
+    cursor: pointer;
+    background-color: bisque;
+    border: 1px solid blue;
+    border-radius: 4px;
+    padding: 3px;
+}
+.phoneBook{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
